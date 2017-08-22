@@ -1,13 +1,7 @@
 class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
-
-    @user.first_name = params[:user][:first_name]
-    @user.last_name = params[:user][:last_name]
-    @user.phone = params[:user][:phone]
-    @user.child = params[:user][:child]
-    @user.spouse = params[:user][:spouse]
-    @user.facility = params[:user][:facility]
+    @user.assign_attributes(user_params)
 
     if @user.save
       flash[:notice] = "User was updated."
@@ -17,4 +11,9 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  private
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :phone, :child, :spouse, :facility)
+    end
 end

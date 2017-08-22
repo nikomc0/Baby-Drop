@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821233425) do
+ActiveRecord::Schema.define(version: 20170822181625) do
+
+  create_table "day_cares", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -21,6 +29,13 @@ ActiveRecord::Schema.define(version: 20170821233425) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                             default: "", null: false
     t.string   "encrypted_password",                default: "", null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "phone",                  limit: 10
+    t.integer  "integer",                limit: 10
+    t.string   "child"
+    t.string   "spouse"
+    t.string   "facility"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -31,12 +46,6 @@ ActiveRecord::Schema.define(version: 20170821233425) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "child"
-    t.string   "spouse"
-    t.string   "facility"
-    t.integer  "phone",                  limit: 10
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
