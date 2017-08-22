@@ -1,5 +1,3 @@
-## README
-
 # BabyDrop
 
 A web app that seeks to eliminate even one more child left in a hot car event.
