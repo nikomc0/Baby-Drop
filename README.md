@@ -1,13 +1,22 @@
-== README
+##README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#BabyDrop
 
-Things you may want to cover:
+A web app that seeks to eliminate even one more child left in a hot car event.
+
+As a family you can schedule the days your child will be dropped off at daycare.
+As well as who is responsible for dropping off and picking up the child. As the 
+time approaches the drop off parent will receive an SMS message alerting that its
+time for drop off, and will require a confirmation from that parent in order to 
+turn of the notification.
 
 * Ruby version
+ ruby -v 4.2.0
 
 * System dependencies
+Devise
+Pundit
+Simple Calendar
 
 * Configuration
 
