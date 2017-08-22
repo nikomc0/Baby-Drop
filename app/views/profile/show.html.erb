@@ -1,0 +1,11 @@
+<div>
+  <h1>Profile</h1>
+
+  <p><%= link_to "Edit Profile", edit_profile_path %></p>
+</div>
+
+  <p><strong>Name:</strong> <%= "#{@user.first_name} #{@user.last_name}" %></p>
+  <p><strong>Phone:</strong> <%= @user.phone %></p>
+  <p><strong>Childs Name:</strong> <%= @user.child %> </p>
+  <p><strong>Spouse's Name:</strong> <%= @user.spouse %>  </p>
+  <p><strong>Day Care:</strong> <%= @user.facility %> </p>
