@@ -5,7 +5,7 @@ class DropOffsController < ApplicationController
   # GET /drop_offs.json
   def index
     @drop_offs = DropOff.all
- end
+  end
 
   # GET /drop_offs/1
   # GET /drop_offs/1.json
@@ -26,7 +26,7 @@ class DropOffsController < ApplicationController
   def create
     @drop_off = DropOff.new(drop_off_params)
     @drop_off.user = current_user
-    
+
     respond_to do |format|
       if @drop_off.save
         format.html { redirect_to calendar_index_path, notice: 'Drop off was successfully created.' }
