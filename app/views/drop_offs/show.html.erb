@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @drop_off.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @drop_off.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @drop_off.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_drop_off_path(@drop_off) %> |
+<%= link_to 'Back', drop_offs_path %>

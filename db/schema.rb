@@ -11,15 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822181625) do
+ActiveRecord::Schema.define(version: 20170823170638) do
 
-  create_table "day_cares", force: :cascade do |t|
+  create_table "calendars", force: :cascade do |t|
     t.string   "name"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "drop_offs", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "drop_offs", ["user_id"], name: "index_drop_offs_on_user_id"
 
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at", null: false

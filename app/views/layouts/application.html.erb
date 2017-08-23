@@ -9,6 +9,11 @@
 <body>
   <ul>
     <li><%= link_to "BabyDrop", root_path %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "Calendar", calendar_index_path %></li>
+    <% else %>
+
+    <% end %>
 
     <% if user_signed_in? %>
       Signed in as: <%= link_to "#{current_user.email}", profile_path(current_user) %> |

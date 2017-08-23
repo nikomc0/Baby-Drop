@@ -1,0 +1,29 @@
+<%= form_for(@drop_off) do |f| %>
+  <% if @drop_off.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@drop_off.errors.count, "error") %> prohibited this drop_off from being saved:</h2>
+
+      <ul>
+      <% @drop_off.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :readonly => true %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %><br>
+    <%= f.datetime_select :start_time, :start_year => Date.today.year, :use_short_month => true, :ampm => true, :minute_step => 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %><br>
+    <%= f.datetime_select :end_time, :start_year => Date.today.year, :use_short_month => true, :ampm => true, :minute_step => 30 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
