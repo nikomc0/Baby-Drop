@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def update
     @user = User.find(params[:id])
     @user.assign_attributes(user_params)
@@ -14,6 +15,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :phone, :child, :spouse, :facility)
+      params.require(:user).permit(:first_name, :last_name, :phone, :child, :spouse, :facility, :trial)
     end
 end

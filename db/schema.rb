@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170823170638) do
     t.string   "child"
     t.string   "spouse"
     t.string   "facility"
+    t.boolean  "trial"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
