@@ -1,11 +1,15 @@
-<%= month_calendar events: @drop_offs do |date, drops| %>
-  <%= date.day %>
+<% if @drop_offs.length > 0 %>
 
-  <% drops.each do |drop| %>
-    <div>
-      <%= drop.name %>
-    </div>
+  <%= month_calendar events: @drop_offs do |date, drops| %>
+    <%= date.day %>
+
+    <% drops.each do |drop| %>
+      <div>
+        <%= drop.name %>
+      </div>
+    <% end %>
   <% end %>
+
 <% end %>
 
 
