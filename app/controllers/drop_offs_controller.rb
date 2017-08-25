@@ -43,7 +43,7 @@ class DropOffsController < ApplicationController
   def update
     respond_to do |format|
       if @drop_off.update(drop_off_params)
-        format.html { redirect_to @drop_off, notice: 'Drop off was successfully updated.' }
+        format.html { redirect_to calendar_index_path, notice: 'Drop off was successfully updated.' }
         format.json { render :show, status: :ok, location: @drop_off }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class DropOffsController < ApplicationController
   def destroy
     @drop_off.destroy
     respond_to do |format|
-      format.html { redirect_to drop_offs_url, notice: 'Drop off was successfully destroyed.' }
+      format.html { redirect_to calendar_index_path, notice: 'Drop off was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
