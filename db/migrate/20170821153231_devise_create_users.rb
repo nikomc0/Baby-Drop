@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string  :child
       t.string  :spouse
       t.string  :facility
+      t.boolean :trial
 
       ## Recoverable
       t.string   :reset_password_token
